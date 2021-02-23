@@ -1,0 +1,4 @@
+App\Entity\Article:
+    article{1..20}:
+        title: '<sentence()>'
+        body: '<paragraph()>'

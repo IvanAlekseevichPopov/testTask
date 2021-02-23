@@ -1,0 +1,20 @@
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: 'auto'
+    providers:
+        backend_users:
+            memory:
+                users:
+                    admin: { password: '$argon2id$v=19$m=65536,t=4,p=1$SvmMBsPfoW7vKzvlYOZ6uQ$K90CsDw4IcOQOra/e770RLB/Qlg0n03oo3uZA535buc', roles: [ 'ROLE_ADMIN' ] }
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        user_area:
+            pattern: ^/api
+            http_basic: ~
+            anonymous: true
+            provider: backend_users
+    access_control:
+        - { path: ^/api, roles: ROLE_ADMIN, methods: [POST, PUT, DELETE] }
+        - { path: ^/api, roles: IS_AUTHENTICATED_ANONYMOUSLY }
