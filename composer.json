@@ -1,7 +1,7 @@
 {
     "type": "project",
-    "name": "ivan-alekseevich-popov/online-cource",
-    "description": "platform for online learning",
+    "name": "ivan-alekseevich-popov/testTask",
+    "description": "Test task",
     "license": "proprietary",
     "require": {
         "php": ">=7.4",
